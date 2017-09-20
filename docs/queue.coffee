@@ -40,3 +40,18 @@ console.log queue.isEmpty()
 queue.dequeue()
 queue.dequeue()
 queue.print()
+
+# 优先队列
+priorityQueue = ->
+  items = []
+  QueueElement = (element, priority) ->
+    @element = element
+    @priority = priority
+  @enqueue = (element, priority) ->
+    queueElement = new QueueElement(element, priority)
+    if @isEmpty()
+      items.push queueElement
+    else
+      added = false
+      for i in [0...items.length-1]
+        if queueElement.priority < items[i].priority
