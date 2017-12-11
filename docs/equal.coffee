@@ -45,7 +45,7 @@ console.log 'pick' is true
 
 console.log 'pick' is 'pick'
 
-person1 = { name: 'json'}
+person1 = { name: 'jack'}
 person2 = { name: 'jack'}
 console.log person1 is person2
 
