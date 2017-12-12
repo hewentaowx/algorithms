@@ -18,7 +18,24 @@ Book = (title, pages, isbn) ->
   @isbn = isbn
   return
 
-book = new Book 'titile', 'page', 'isbn'
+book = new Book 'title', 'page', 'isbn'
 console.log book.title
-book.titile = 'new title'
-console.log book.titile
+book.title = 'new title'
+console.log book.title
+
+# 类可以包含函数可以声明和使用函数
+Book.prototype.printTitle = ->
+  console.log @title
+book.printTitle()
+
+# 也可以直接在类的定义里声明函数
+Book = (title, pages, isbn) ->
+  @title = title
+  @pages = pages
+  @isbn = isbn
+  @printIsbn = ->
+    console.log @isbn
+  return
+
+book = new Book 'title', 'page', 'isbn'
+book.printIsbn()
