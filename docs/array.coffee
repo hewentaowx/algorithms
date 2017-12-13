@@ -4,7 +4,7 @@ daysOfWeek = new Array()
 daysOfWeek = new Array 7
 daysOfWeek = new Array 'Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'
 
-# 用中括号的形式比new一些
+# 用中括号的形式比new好一些
 daysOfWeek = []
 daysOfWeek = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa']
 console.log daysOfWeek.length
