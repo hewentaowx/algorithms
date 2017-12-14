@@ -53,3 +53,59 @@ console.log numbers
 
 numbers.shift()
 console.log numbers
+
+# 删除数组随意位置元素 splice(start, num) start 开始的索引 num从索引开始删除多少位
+numbers.splice 0,1
+console.log numbers
+
+# 加数组也可以用 splice(start,num,int,int1.int2) start开始的索引 因为不是删除元素所以为0 int,int1,in2为插入的数值
+numbers.splice 0,0,1,2,3
+console.log numbers
+
+newNumbers = [0, 1, 2, 3, 4, 5, 6, 7]
+console.log newNumbers
+newNumbers.splice 0, 3
+console.log newNumbers
+newNumbers.splice 0, 0, 0, 1, 2
+console.log newNumbers
+newNumbers.splice 0, 3, 0, 1, 2
+console.log newNumbers
+
+# 二维数组(矩阵)和多维数组  行 row 列 Column
+###
+     [0]    [1]    [2]    [3]    [4]
+[0]   0      1      2      3      4
+[1]   5      6      7      8      9
+###
+temp = []
+temp[0] = []
+temp[0][0] = 0
+temp[0][1] = 1 
+temp[0][2] = 2
+temp[0][3] = 3
+temp[0][4] = 4 
+
+temp[1] = []
+temp[1][0] = 5
+temp[1][1] = 6
+temp[1][2] = 7
+temp[1][3] = 8
+temp[1][4] = 9
+
+tempTest = (val) ->
+  for row in val
+    for column in row
+      console.log column
+
+tempTest temp
+
+str = ''
+jiujiu = ->
+  for row in [1...10]
+    for column in [1...row+1]
+      str += column + '*' +row + '=' + row*column + " "
+      if row is column
+        str += '\n'
+
+jiujiu()
+console.log str
