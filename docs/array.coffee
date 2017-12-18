@@ -100,12 +100,44 @@ tempTest = (val) ->
 tempTest temp
 
 str = ''
-jiujiu = ->
+do ->
   for row in [1...10]
     for column in [1...row+1]
       str += column + '*' +row + '=' + row*column + " "
       if row is column
         str += '\n'
-
-jiujiu()
 console.log str
+
+# 3*3*3 矩阵
+max = []
+do ->
+  for row in [1...4]
+    max[row] = []
+    for column in [1...4]
+      max[row][column] = []
+      for deep in [1...4]
+        max[row][column][deep] = row + column + deep
+
+###
+concat          连接两个或更多数组并返回结果
+every           对数组中每一项运行给定函数，如果该函数对每一项都返回true则返回true
+filter          对数组中每一项运行给定函数，如果该函数会返回true的项组成的数组
+forEach         对数组中每一项运行给定函数，没有返回值
+join            对所有的数组元素连接成一个字符串
+indexOf         返回第一个与给定参数相等的数组元素的索引，没有找到则返回 -1
+lastIndexOf     返回数组中搜索到的与给定参数相等的元素的索引里最大的值
+map             对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组
+reverse         颠倒数组的元素的顺序，第一个元素变成最后一个，最后一个变成第一个元素
+slice           传入索引值将数组里对应的索引范围内的元素作为新数组返回
+some            对数组中的每一项运行给定函数
+sort            按照字母顺序对数组排序，支持传入指定排序方法的函数作为参考
+toString        将数组作为字符串返回
+valueOf         和toString类似，将数组作为字符串返回
+###
+
+# 数组合并
+zero = 0
+positiveNumbers = [1, 2, 3]
+negativeNumbers = [-3, -2, -1]
+numbers = negativeNumbers.concat zero, positiveNumbers
+console.log numbers
