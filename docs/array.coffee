@@ -141,3 +141,13 @@ positiveNumbers = [1, 2, 3]
 negativeNumbers = [-3, -2, -1]
 numbers = negativeNumbers.concat zero, positiveNumbers
 console.log numbers
+
+# 迭代器函数
+isEven = (x) ->
+  if x % 2 == 0
+  then console.log true
+  else console.log false
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+nums.every isEven
+nums.some isEven
