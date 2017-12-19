@@ -40,5 +40,28 @@ stack.pop()
 stack.pop()
 console.log (stack.size())
 stack.print()
+
+# 从十进制到二进制
+# 通用转进制算法
+baseConverter = (docNumber, base) ->
+  stack = new Stack()
+  baseString = ''
+  digits = '0123456789ABCDEF'
+
+  while docNumber > 0
+    rem = Math.floor(docNumber % base)
+    stack.push rem
+    docNumber = Math.floor(docNumber / base)
+  
+  while not stack.isEmpty()
+    baseString += digits[stack.pop()]
+
+  return baseString
+
+console.log baseConverter 100345, 2
+console.log baseConverter 100345, 8
+console.log baseConverter 100345, 16
+
+  
   
   
