@@ -144,10 +144,49 @@ console.log numbers
 
 # 迭代器函数
 isEven = (x) ->
-  if x % 2 == 0
-  then console.log true
-  else console.log false
+  return ( x % 2 == 0 )
 
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-nums.every isEven
-nums.some isEven
+console.log nums.every isEven
+console.log nums.some isEven
+console.log nums.map isEven
+
+nums.forEach (x) ->
+  console.log ( x % 2 == 0)
+
+console.log nums.filter isEven
+
+# 求nums的数字和
+console.log nums.reduce (previous, current, index) ->
+  return previous + current
+
+# 反序输出数组
+console.log nums.reverse()
+
+# sort排序 sort是以按 ASCII值进行排序的
+console.log nums.sort (a, b) ->
+  return a - b
+
+# 自定义排序
+friends = [
+  {name: 'John', age: 30}
+  {name: 'Ana', age: 20}
+  {name: 'Chris', age: 26}
+]
+comparePerson = (a, b) ->
+  if a.age < b.age 
+    return -1
+  if a.age > b.age
+    return 1
+  return 0
+console.log friends.sort(comparePerson)
+
+# 搜索 indexOf返回匹配的第一个元素的索引 lastIndexOf返回参数匹配的最后一个元素的索引 
+console.log nums.indexOf 2
+console.log nums.lastIndexOf 3
+
+# 输出数组和字符串 toString 和 join
+console.log nums.toString()
+console.log nums.join '-'
+
+
