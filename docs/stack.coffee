@@ -4,26 +4,27 @@
 # 栈的创建
 Stack = ->
   # 定义一种数据结构保存栈里的元素 选择数组
-  iterms = []
+  items = []
   # 定义push方法往栈添加新元素
-  @.push = (element) ->
-    iterms.push element
+  @push = (element) ->
+    items.push element
   # 使用pop方法 移除栈里的元素 遵从LIFO原则
-  @.pop = ->
-    return iterms.pop()
+  @pop = ->
+    items.pop()
   # peek不会对栈做任何修改
-  @.peek = ->
-    return iterms[iterms.length-1]
+  @peek = ->
+    items[items.length-1]
   # 如果栈为空返回为 true 否则返回false
-  @.isEmpty = ->
-    return iterms.length == 0
+  @isEmpty = ->
+    items.length == 0
   # size
-  @.size = ->
-    return iterms.length
-  @.clear = ->
-    iterms = []
-  @.print = ->
-    console.log iterms.toString()
+  @size = ->
+    items.length
+  @clear = ->
+    items = []
+  @print = ->
+    console.log items.toString()
+
   return
 
 stack = new Stack()
@@ -61,7 +62,3 @@ baseConverter = (docNumber, base) ->
 console.log baseConverter 100345, 2
 console.log baseConverter 100345, 8
 console.log baseConverter 100345, 16
-
-  
-  
-  
