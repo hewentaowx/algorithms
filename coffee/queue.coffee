@@ -42,16 +42,37 @@ queue.dequeue()
 queue.print()
 
 # 优先队列
-priorityQueue = ->
+PriorityQueue = ->
   items = []
+
   QueueElement = (element, priority) ->
     @element = element
     @priority = priority
+
+  @isEmpty = ->
+    items.length == 0
+
+  @print = ->
+    console.log items
+
   @enqueue = (element, priority) ->
     queueElement = new QueueElement(element, priority)
     if @isEmpty()
       items.push queueElement
     else
       added = false
-      for i in [0...items.length-1]
+      for i in [0...items.length]
         if queueElement.priority < items[i].priority
+          items.splice i, 0, queueElement
+          added = true
+          break
+      if not added
+        items.push queueElement
+
+  return
+
+priorityQueue = new PriorityQueue()
+priorityQueue.enqueue 'John', 7
+priorityQueue.enqueue 'Jack', 2
+priorityQueue.enqueue 'Mary', 5
+priorityQueue.print()
