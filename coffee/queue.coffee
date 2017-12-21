@@ -76,3 +76,24 @@ priorityQueue.enqueue 'John', 7
 priorityQueue.enqueue 'Jack', 2
 priorityQueue.enqueue 'Mary', 5
 priorityQueue.print()
+
+# 循环队列 击鼓传花
+hotPotato = (nameList, num) ->
+  queue = new Queue()
+
+  for i in [0...nameList.length]
+    queue.enqueue nameList[i]
+  
+  person = ''
+  while queue.size() > 1
+    for j in [0...num]
+      queue.enqueue(queue.dequeue())
+
+    person = queue.dequeue()
+    console.log person + '在比赛中被淘汰了'
+
+  return queue.dequeue()
+     
+name = ['Jhon', 'Jack', 'Camila', 'Ingrid', 'Carl' ]
+winner = hotPotato name, 3
+console.log '胜利者是:', winner
