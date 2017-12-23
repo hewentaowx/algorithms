@@ -19,10 +19,29 @@ linkegdList = ->
         current = current.next
       current.next = node
     length++
+
+  @removeAt = (position) ->
+    # 检查越界值
+    if position > -1 and position < length
+      current = head
+      index = 0
+      # 移除第一项
+      if position is 0
+        head = current.next
+      else
+        while index++ < position
+          previous = current
+          current = current.next
+        # 将previous与current的下一项链接起来，跳过current 从而移除它
+        previous.next = current.next
+      length--
+      return current.element
+    else
+      return null
+
   return
 
   @insert = (position, element) ->
-  @removeAt = (position) ->
   @remove = (element) ->
   @indexOf = (element) ->
   @isEmpty = ->
@@ -34,3 +53,4 @@ linkegdList = ->
 list = new linkegdList()
 console.log list.append 15
 console.log list.append 10
+console.log list.removeAt 0
