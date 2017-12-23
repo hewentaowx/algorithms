@@ -19,6 +19,8 @@ linkegdList = ->
         current = current.next
       current.next = node
     length++
+  return
+
   @insert = (position, element) ->
   @removeAt = (position) ->
   @remove = (element) ->
@@ -28,3 +30,7 @@ linkegdList = ->
   @getHead = ->
   @toString = ->
   @print = ->
+
+list = new linkegdList()
+console.log list.append 15
+console.log list.append 10
