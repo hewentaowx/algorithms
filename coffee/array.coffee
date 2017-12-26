@@ -188,5 +188,3 @@ console.log nums.lastIndexOf 3
 # 输出数组和字符串 toString 和 join
 console.log nums.toString()
 console.log nums.join '-'
-
-
