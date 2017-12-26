@@ -100,4 +100,4 @@ list = new linkegdList()
 console.log list.append 15
 console.log list.append 10
 console.log list.removeAt 0
-console.log list.insert 0, 17
+# console.log list.insert 0, 17
